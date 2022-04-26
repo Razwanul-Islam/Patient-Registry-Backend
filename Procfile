@@ -1,0 +1,1 @@
+web: gunicorn Patient_Register.wsgi
