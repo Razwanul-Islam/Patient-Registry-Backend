@@ -133,9 +133,9 @@ AUTH_USER_MODEL = 'core.CustomUser'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR /'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 MEDIA_ROOT = BASE_DIR /'media'
 MEDIA_URL = '/media/'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
 
 django_heroku.settings(locals(),staticfiles=False)
 
