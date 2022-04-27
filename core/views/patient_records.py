@@ -33,7 +33,7 @@ class ViewPatientSingleRecord(APIView):
     permission_classes=(IsAuthenticated,)
     def get(self,request,*args,**kwargs):
         querySet=PatientRecord.objects.get(user=request.user,id=kwargs.get('id'))
-        if querySet.exists():
+        if querySet.DoesNotExist:
             datas=PatientRecordForViewSerializer(querySet)
             return Response({'record':datas.data})
         else:
