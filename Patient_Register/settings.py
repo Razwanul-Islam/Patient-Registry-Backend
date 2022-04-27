@@ -25,7 +25,7 @@ SECRET_KEY = 'k+6_icwm7g7v2otpnj+uu$mr&@^)$g6zgmy@v2ld-)8he2#2un'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://homomedic.netlify.app/","http://localhost:3000"]
+ALLOWED_HOSTS = ["https://homomedic.netlify.app","http://localhost:3000"]
 
 # Application definition
 
@@ -49,7 +49,7 @@ REST_FRAMEWORK = {
     ]
 }
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
+    "https://homomedic.netlify.app","http://localhost:3000"
 ]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
