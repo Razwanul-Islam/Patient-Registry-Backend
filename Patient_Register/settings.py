@@ -49,7 +49,7 @@ REST_FRAMEWORK = {
     ]
 }
 CORS_ALLOWED_ORIGINS = [
-    "https://homomedic.netlify.app","http://localhost:3000"
+    "https://homomedic.netlify.app"
 ]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

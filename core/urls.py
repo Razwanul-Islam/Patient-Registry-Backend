@@ -18,6 +18,7 @@ urlpatterns = [
     # Patient Records
     path('patient-record/get-all',ViewPatientRecords.as_view(),name='view_patient_records'),
     path('patient-record/get/<int:id>',ViewPatientSingleRecord.as_view(),name='view_patient_single_record'),
+    path('patient-record/search',SearchPatientRecords.as_view(),name='search_patient_records'),
     path('patient-record/delete/<int:id>',DeletePatientSingleRecord.as_view(),name='delete_patient_single_record'),
     path('patient-record/create',CreatePatientRecord.as_view(),name='create_patient_record'),
     path('patient-record/update',CreatePatientRecord.as_view(),name='update_patient_record'),
