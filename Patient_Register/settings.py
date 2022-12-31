@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'k+6_icwm7g7v2otpnj+uu$mr&@^)$g6zgmy@v2ld-)8he2#2un'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["https://homomedic.netlify.app","http://localhost:3000"]
 
@@ -49,7 +49,7 @@ REST_FRAMEWORK = {
     ]
 }
 CORS_ALLOWED_ORIGINS = [
-    "https://homomedic.netlify.app"
+    "https://homomedic.netlify.app","http://localhost:3000"
 ]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

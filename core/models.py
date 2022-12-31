@@ -146,3 +146,21 @@ class Meeting(AutoFields):
             "appointment":self.appointment.id,
             "token":self.token
         }
+
+
+                   ########################################
+                   #      Prescriptions and medicines     #
+                   ########################################
+
+class Prescription(AutoFields):
+    doctor = models.ForeignKey(UserProfile,related_name="doctor",on_delete=models.CASCADE)
+    patient = models.ForeignKey(UserProfile,related_name="patient",on_delete=models.CASCADE)
+    appointment = models.ForeignKey(Appointment,on_delete=models.SET_NULL,blank=True,null=True)
+    patient_name = models.CharField(max_length=150)
+    patient_age = models.CharField(max_length=150)
+    patient_sex = models.CharField(max_length=150)
+
+class Medicine(AutoFields):
+    prescription = models.ForeignKey(Prescription,on_delete=models.CASCADE)
+    name = models.TextField()
+    rule = models.TextField()

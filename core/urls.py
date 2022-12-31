@@ -7,6 +7,7 @@ from core.views.profileView import *
 from core.views.doctorProfile import *
 from core.views.appointment_notification_view import *
 from rest_framework.urlpatterns import format_suffix_patterns
+from core.views.prescription import PrescriptionCreate,PrescriptionList,PrescriptionDetail
 urlpatterns = [
     #Doctor profile data
     path('doctors',DoctorProfileRankingView.as_view(),name="doctors"),
@@ -52,6 +53,12 @@ urlpatterns = [
     path('appointment/<int:id>',GetSingleAppointment.as_view(),name="get_single_appointment"),
     path('notifications',GetNotification.as_view(),name="get_user_notification"),
     path('notification/update/<int:pk>',UpdateNotification.as_view(),name="update_notification"),
-    path('appointment/update/<int:pk>',UpdateAppointment.as_view(),name="update_appointment")
+    path('appointment/update/<int:pk>',UpdateAppointment.as_view(),name="update_appointment"),
+    # Prescription
+    path('prescription/create',PrescriptionCreate.as_view(),name='create_prescription'),
+    # path('prescription/update',UpdatePrescription.as_view(),name='update_prescription'),  
+    # path('prescription/delete',DeletePrescription.as_view(),name='delete_prescription'),
+    path('prescription/get',PrescriptionList.as_view(),name='get_prescriptions'),
+    path('prescription/get/<int:pk>',PrescriptionDetail.as_view(),name='get_single_prescription'),
 ]
 urlpatterns=format_suffix_patterns(urlpatterns)
